@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101010">
+  <title>KM Design Studio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="KM Design Studio"><span class="brand-mark">KM</span><span class="brand-copy">DESIGN <b>STUDIO</b><small>HERRAMIENTA CREATIVA</small></span></a>
+    <div class="topbar-right"><span class="status-dot"></span><span>PROYECTO LOCAL</span><span class="version">V 1.0</span></div>
+  </header>
+  <main class="app-shell">
+    <aside class="sidebar">
+      <div class="side-heading"><span class="eyebrow">ESPACIO DE TRABAJO</span><h1>Crear publicación</h1><p>Diseña piezas de producto para KM Motos.</p></div>
+      <section class="panel-section">
+        <div class="section-title"><span class="step">01</span><h2>Información del producto</h2></div>
+        <label class="field-label" for="productName">Nombre del producto</label><input id="productName" value="Kit de tracción" maxlength="60">
+        <label class="field-label" for="productCode">Código</label><input id="productCode" value="KMS-0000" maxlength="30">
+        <label class="field-label" for="productDescription">Descripción</label><textarea id="productDescription" rows="2" maxlength="100">Calidad y rendimiento para cada recorrido.</textarea>
+        <label class="field-label" for="productPrice">Precio (opcional)</label><input id="productPrice" placeholder="Ej. L. 850.00" maxlength="25">
+      </section>
+      <section class="panel-section">
+        <div class="section-title"><span class="step">02</span><h2>Fotografía</h2></div>
+        <label class="upload-zone" for="imageUpload"><span class="upload-icon">＋</span><b>Subir fotografía</b><small>PNG, JPG o WEBP · Se conserva la proporción</small></label>
+        <input id="imageUpload" type="file" accept="image/png,image/jpeg,image/webp" hidden>
+        <button class="text-button" id="removeImage" type="button">Quitar fotografía</button>
+      </section>
+      <section class="panel-section">
+        <div class="section-title"><span class="step">03</span><h2>Plantilla</h2></div>
+        <div class="template-grid">
+          <button class="template-card active" data-template="bold" type="button"><span class="mini-preview mini-bold"><i></i><b></b></span><span>Impacto</span></button>
+          <button class="template-card" data-template="clean" type="button"><span class="mini-preview mini-clean"><i></i><b></b></span><span>Minimal</span></button>
+          <button class="template-card" data-template="tech" type="button"><span class="mini-preview mini-tech"><i></i><b></b></span><span>Técnica</span></button>
+        </div>
+      </section>
+      <section class="panel-section">
+        <div class="section-title"><span class="step">04</span><h2>Personalización</h2></div>
+        <label class="field-label" for="accentColor">Color de acento</label><div class="color-row"><input id="accentColor" type="color" value="#e3212b"><span id="colorValue">#E3212B</span><button class="swatch" data-color="#e3212b" type="button" aria-label="Rojo KM"></button><button class="swatch gold" data-color="#d5a64b" type="button" aria-label="Dorado"></button><button class="swatch white" data-color="#f2f2f2" type="button" aria-label="Blanco"></button></div>
+        <label class="check-row"><input id="showPrice" type="checkbox" checked> Mostrar precio</label>
+      </section>
+      <div class="sidebar-footer"><span>KM MOTOS</span><span>DISEÑO DE PRODUCTO</span></div>
+    </aside>
+    <section class="workspace">
+      <div class="workspace-head"><div><span class="eyebrow">VISTA PREVIA</span><h2>Tu publicación</h2></div><div class="canvas-meta"><span>FORMATO CUADRADO</span><b>1080 × 1080 PX</b></div></div>
+      <div class="preview-area"><div class="canvas-frame"><canvas id="designCanvas" width="1080" height="1080" aria-label="Vista previa del diseño"></canvas></div></div>
+      <div class="workspace-bottom"><span><i class="status-dot"></i> Cambios aplicados automáticamente</span><button id="downloadBtn" class="download-button" type="button"><span>↓</span> Exportar PNG</button></div>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
